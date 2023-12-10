@@ -1,0 +1,219 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/*Contenedor padre*/
+body {
+    display: grid;
+    grid-template-rows: 80px 70px calc(100vh - 220px) 70px;
+    grid-template-areas:
+        "menu"
+        "filtro"
+        "main"
+        "footer";
+    width: 100%;
+}
+
+/*Fin contenedor padre*/
+
+
+/*Sección Menu*/
+.menu {
+    grid-area: menu;
+    background-color: #C8AE7D;
+    padding: 10px;
+}
+
+.logo {
+    display: flex;
+}
+
+.logo i {
+    padding-right: 10px;
+}
+
+.name {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.list {
+    display: none;
+}
+
+/*Fin sección menu*/
+
+/*Sección filtro*/
+.filtro {
+    grid-area: filtro;
+    background-color: #765827;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    gap: 5px;
+    padding: 10px;
+}
+
+.filtro select {
+    width: 100%;
+}
+
+/*Fin sección filtro*/
+
+/*Sección main*/
+main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F7F1E5;
+}
+
+.cards {
+    height: 80%;
+    padding: 30px;
+    gap: 20px;
+    overflow-y: scroll;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px;
+}
+
+.card-header img {
+    width: 100%;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 95%;
+    gap: 5px;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.card button {
+    background-color: #F7F1E5;
+    border: 0;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.paginacion {
+    display: flex;
+    justify-content: center;
+    background-color: #F7F1E5;
+    padding-top: 10px;
+}
+
+.paginacion a {
+    color: black;
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+/*Fin sección cards*/
+
+
+/*Footer*/
+footer {
+    grid-area: footer;
+    background-color: #765827;
+    text-align: center;
+    color: #fff;
+    padding: 10px;
+}
+
+/*Fin footer*/
+
+/*Medias Queries*/
+
+
+@media (min-width: 768px) {
+    body {
+        grid-template-areas:
+            "menu filtro filtro filtro filtro filtro filtro"
+            "menu main main main main main main "
+            "menu main main main main main main"
+            "footer main main main main main main";
+    }
+
+    .list {
+        display: contents;
+    }
+
+    .list ul {
+        padding-top: 10%;
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        gap: 10px;
+    }
+
+    .name {
+        gap: 10px;
+        display: flex;
+        padding: 20px;
+    }
+
+    .list ul li a {
+        text-decoration: none;
+        color: #000;
+    }
+
+    .burger {
+        display: none;
+    }
+
+    .paginacion a {
+        padding: 15px;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 20px;
+        padding: 25px;
+        background-color: #F7F1E5;
+    }
+
+    .card button{
+        background-color: #F7F1E5;
+        border: 0;
+        padding: 5px;
+    }
+
+    .card-header img{
+        height: 250px;
+        width: 250px;
+        object-fit: cover;
+
+    }
+
+    .card-body{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        gap: 5px;
+        padding: 6px;
+        background-color: #fff;
+    }
+
+}
